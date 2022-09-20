@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<th:block th:insert="fragments/default.html :: headerfiles"></th:block>
+</head>
+
+<body>
+	<div class="container" th:fragment="header">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" th:href="@{'/home'}">Phonetastik</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a th:href="@{'/home'}">Home</a></li>
+					<li><a href="#">Contact</a></li>
+
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+
+
+	<div>
+		<th:block th:insert="fragments/default.html :: scripts">
+	</div>
+
+</body>
+
+</html>
