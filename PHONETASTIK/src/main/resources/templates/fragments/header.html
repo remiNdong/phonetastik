@@ -7,14 +7,45 @@
 
 <body>
 	<div class="container" th:fragment="header">
+
 		<nav class="navbar navbar-inverse navbar-fixed-top">
+
+
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" th:href="@{'/home'}">Phonetastik</a>
+
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a th:href="@{'/home'}">Home</a></li>
+					<li>
+						<a th:href="@{'/home'}">
+							<span><img  role="presentation" th:src="@{'/images/phonetastikRemi.png'}" width="120" height="100"/></span>
+						</a>
+					</li>
+
+					<li><a th:href="@{'/home'}">Acceuil</a></li>
 					<li><a href="#">Contact</a></li>
+					<li>
+						<a href="#">
+							<i class="glyphicon glyphicon-earphone" style="font-size:24px"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-facebook" style="font-size:24px"></i>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class="fa fa-instagram" style="font-size:24px"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-snapchat" style="font-size:24px"></i>
+						</a>
+					</li>
 
 				</ul>
 			</div>
