@@ -5,26 +5,28 @@
 	<th:block th:insert="fragments/default.html :: headerfiles"></th:block>
 </head>
 
-<body>
-
-	<nav>
-		<th:block th:insert="fragments/header.html :: header"></th:block>
-	</nav>
-	
-	
-	<div>
-		<th:block th:insert="fragments/carousel.html :: carousel">
-	</div>
-	
+<body id="bodyIndex">
+	<div class="container-fluid">
+		<nav>
+			<th:block th:insert="fragments/header.html :: header"></th:block>
+		</nav>
 
 
-	<nav class="footerCss">
-		<th:block th:insert="fragments/footer.html :: footer"></th:block>
-	</nav>
+		<div>
+			<th:block th:insert="fragments/carousel.html :: carousel">
+		</div>
 
-	
-	<div>
-		<th:block th:insert="fragments/default.html :: scripts">
+
+
+		<nav class="footerCss">
+			<th:block th:insert="fragments/footer.html :: footer"></th:block>
+		</nav>
+
+
+		<div>
+			<th:block th:insert="fragments/default.html :: scripts">
+		</div>
+
 	</div>
 
 </body>
