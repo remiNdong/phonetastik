@@ -1,2 +1,33 @@
+.conteneurNav {
+	 display: flex;
+   align-items: center;
+   margin-left : 20px;
+   margin-right: 20px;
+    
+}
+
+li {
+	margin-left : 20px;
+   margin-right: 20px;
+font-size: 1.5em;
+}
+
+.footerCss {
+	background-color: black;
+	color :white;
+	text-align: center;
+}
+
+
+.nav.navbar-nav li a {
+color:white; 
+}
+
+.conteneurNav .navbar-header a{
+	color :red;
+	font-size: 1.5em;
+}
+
+
 
 

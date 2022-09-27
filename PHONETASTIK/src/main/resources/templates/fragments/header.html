@@ -6,17 +6,17 @@
 </head>
 
 <body>
-	<div class="container" th:fragment="header">
+	<div class="container-fluid" th:fragment="header">
 
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 
 
-			<div class="container-fluid">
+			<div class="container-fluid conteneurNav">
 				<div class="navbar-header">
-					<a class="navbar-brand" th:href="@{'/home'}">Phonetastik</a>
+					<a class="navbar-brand" th:href="@{'/home'}">Phonetastik Saint-Omer</a>
 
 				</div>
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav conteneurNav">
 					<li>
 						<a th:href="@{'/home'}">
 							<span><img role="presentation" th:src="@{'/images/phonetastikRemi.png'}" width="120"
@@ -26,9 +26,11 @@
 					</li>
 
 					<li><a th:href="@{'/home'}">Acceuil</a></li>
-					<li><a href="#">Contact</a></li>
 					<li>
-						<a href="#">
+					<a href="#">Qui sommes nous ?</a>
+					</li>
+					<li>
+						<a href="tel:+33767226264">
 							<i class="glyphicon glyphicon-earphone" style="font-size:24px"></i>
 						</a>
 					</li>
