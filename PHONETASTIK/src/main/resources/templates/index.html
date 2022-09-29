@@ -6,27 +6,34 @@
 </head>
 
 <body>
-	
-		<nav>
-			<th:block th:insert="fragments/header.html :: header"></th:block>
-		</nav>
+
+	<nav>
+		<th:block th:insert="fragments/header.html :: header"></th:block>
+	</nav>
 
 
-		<div>
-			<th:block th:insert="fragments/carousel.html :: carousel">
-		</div>
+	<div>
+		<th:block th:insert="fragments/carouselBis.html :: carousel">
+	</div>
+
+	<div class="container-fluid descriptionMagasin">
+
+		<p>Spécialiste de la réparation de téléphones, tablettes, consoles de jeux vidéos,
+			ordinateurs</p>
+		<p>Vente d'accessoires</p>
+
+	</div>
 
 
+	<nav>
+		<th:block th:insert="fragments/footer.html :: footer"></th:block>
+	</nav>
 
-		<nav>
-			<th:block th:insert="fragments/footer.html :: footer"></th:block>
-		</nav>
 
+	<div>
+		<th:block th:insert="fragments/default.html :: scripts">
+	</div>
 
-		<div>
-			<th:block th:insert="fragments/default.html :: scripts">
-		</div>
-	
 
 </body>
 
