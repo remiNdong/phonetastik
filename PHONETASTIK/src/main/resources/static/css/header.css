@@ -10,6 +10,7 @@
 .navHeader{
 	background-color: rgb(248, 248, 248);
 	 color :red;
+	 margin-bottom: 0;
 }
 
 li {
@@ -33,6 +34,12 @@ color:red;
 	color :red;
 	font-size: 1.5em;
 }
+
+#dropdownIcone li a {
+	font-size: 0.75em;
+	color: black ;
+}
+
 
 
 

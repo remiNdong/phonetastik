@@ -6,16 +6,47 @@
 </head>
 
 <body>
-	<div class="container-fluid" th:fragment="header">
 
-		<nav class="navbar navbar-inverse navbar-fixed-top navHeader">
+		<nav class="navbar navbar-default navHeader" th:fragment="header">
 
 
 			<div class="container-fluid conteneurNav">
-				<div class="navbar-header">
-					<a class="navbar-brand" th:href="@{'/home'}">Phonetastik</a>
 
+				<div class="navbar-header">
+
+					<div class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-menu-hamburger"></span>
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu" id="dropdownIcone">
+							<li><a th:href="@{'/home'}">Acceuil</a></li>
+							<li><a href="#">Qui sommes nous ?</a></li>
+							<li>
+								<a href="tel:+33767226264">
+									<i class="glyphicon glyphicon-earphone" style="font-size:24px"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-facebook" style="font-size:24px"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-instagram" style="font-size:24px"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-snapchat" style="font-size:24px"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
+
+
+
 				<ul class="nav navbar-nav conteneurNav">
 					<li>
 						<a th:href="@{'/home'}">
@@ -27,7 +58,7 @@
 
 					<li><a th:href="@{'/home'}">Acceuil</a></li>
 					<li>
-					<a href="#">Qui sommes nous ?</a>
+						<a href="#">Qui sommes nous ?</a>
 					</li>
 					<li>
 						<a href="tel:+33767226264">
@@ -54,7 +85,6 @@
 				</ul>
 			</div>
 		</nav>
-	</div>
 
 
 
