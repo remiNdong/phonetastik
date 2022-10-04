@@ -23,11 +23,19 @@
 	left : 36%;
 }
 
-.descriptionMagasin {
-	 font-family: Candara;
-  font-size: 2em;
-  text-align: center;
-	
+
+
+#myCarouselAvis {
+	 width: 500px;
+  height: 250px;
+  
+}
+
+#conteneurCarouselAvis {
+	text-align: center;
+	margin : 4px ; 
+	padding : 10px;
+	 
 }
 
 
