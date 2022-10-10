@@ -7,10 +7,16 @@
 
 <body>
 
+<div id="conteneurHaut">
 	<nav>
 		<th:block th:insert="fragments/header.html :: header"></th:block>
 	</nav>
+	
+	<div id="conteneurRuban1">
+		<div><img role="presentation" th:src="@{'/images/rubanHaut.png'}"/></div>
+	</div>
 
+</div>
 
 	<div>
 		<th:block th:insert="fragments/carouselBis.html :: carousel">

@@ -27,3 +27,14 @@ legend.scheduler-border {
   margin : 40px;
 	
 }
+
+#conteneurRuban1 , #conteneurHaut {
+	
+	 background-color: black;
+}
+
+#conteneurRuban1 div{
+	
+	text-align: center;
+	
+}
