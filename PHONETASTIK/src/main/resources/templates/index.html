@@ -7,16 +7,19 @@
 
 <body>
 
-<div id="conteneurHaut">
-	<nav>
-		<th:block th:insert="fragments/header.html :: header"></th:block>
-	</nav>
-	
-	<div id="conteneurRuban1">
-		<div><img role="presentation" th:src="@{'/images/rubanHaut.png'}"/></div>
+	<div id="conteneurHaut">
+		<nav>
+			<th:block th:insert="fragments/header.html :: header"></th:block>
+		</nav>
+
+		<div id="conteneurRuban1">
+			<!-- <th:block th:insert="fragments/modalNav.html :: modalNav"></th:block> -->
+			<div> <img role="presentation" th:src="@{'/images/rubanHaut.png'}"  /> </div>
+
+		</div>
 	</div>
 
-</div>
+	</div>
 
 	<div>
 		<th:block th:insert="fragments/carouselBis.html :: carousel">
@@ -26,7 +29,12 @@
 
 		<p>Spécialiste de la réparation de téléphones, tablettes, consoles de jeux vidéos,
 			ordinateurs</p>
+		<p>Vente de télèphone neufs et occasions</p>
+		<p>Reprise de vos télèphones</p>
 		<p>Vente d'accessoires</p>
+		<p>Recyclage de télèphones et pièces électroniques en fin de vie
+		<p>
+
 
 	</div>
 
@@ -36,7 +44,12 @@
 
 	</fieldset>
 
-
+	<div id="containerMap">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.525134384305!2d2.2552552149780576!3d50.74729577381315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf8b1a2dac551%3A0x61c7b0f3035599b3!2s8%20Rue%20d&#39;Arras%2C%2062500%20Saint-Omer!5e0!3m2!1sfr!2sfr!4v1665504476067!5m2!1sfr!2sfr"
+			width="1980px" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
 
 
 	<nav>

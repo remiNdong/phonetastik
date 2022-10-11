@@ -38,3 +38,12 @@ legend.scheduler-border {
 	text-align: center;
 	
 }
+
+#containerMap{
+	
+	  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top : 20px ;
+}
+
