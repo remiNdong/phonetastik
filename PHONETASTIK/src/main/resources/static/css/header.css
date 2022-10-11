@@ -2,7 +2,7 @@
 	display : flex ;
 align-items: center;
  background-color:black;
-    color :red;
+    color :white;
 }
 
 
@@ -10,7 +10,7 @@ align-items: center;
 
 .navHeader{
 	 background-color: black;
-	 color :red;
+	 color :white;
 	 margin-bottom: 0;
 	 
 }
@@ -23,13 +23,13 @@ font-size: 1.5em;
 
 .footerCss {
  background-color:black;
-	color :red;
+	color :white;
 	text-align: center;
 }
 
 
 .nav.navbar-nav li a {
-color:red; 
+color:white; 
 }
 
 .conteneurNav .navbar-header a{
