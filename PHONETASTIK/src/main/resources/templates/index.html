@@ -14,7 +14,7 @@
 
 		<div id="conteneurRuban1">
 			<!-- <th:block th:insert="fragments/modalNav.html :: modalNav"></th:block> -->
-			<div> <img role="presentation" th:src="@{'/images/rubanHaut.PNG'}"  /> </div>
+			<div> <img role="presentation" th:src="@{'/images/rubanHaut2.PNG'}"  /> </div>
 
 		</div>
 	</div>
@@ -25,18 +25,10 @@
 		<th:block th:insert="fragments/carouselBis.html :: carousel">
 	</div>
 
-	<div class="container-fluid descriptionMagasin">
-
-		<p>Spécialiste de la réparation de téléphones, tablettes, consoles de jeux vidéos,
-			ordinateurs</p>
-		<p>Vente de télèphone neufs et occasions</p>
-		<p>Reprise de vos télèphones</p>
-		<p>Vente d'accessoires</p>
-		<p>Recyclage de télèphones et pièces électroniques en fin de vie
-		<p>
-
-
+	<div>
+		<th:block th:insert="fragments/descriptionMagasin.html :: descriptionMagasin">
 	</div>
+
 
 	<fieldset class="scheduler-border container" id="boxAvis">
 		<legend class="scheduler-border">Donnez votre avis sur Google</legend>
