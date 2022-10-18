@@ -1,0 +1,16 @@
+.footerCss {
+ background-color:black;
+	color :white;
+	text-align : center;
+	
+}
+
+
+
+
+#rowFooter {
+	
+	display: flex;
+    align-items: center;
+}
+

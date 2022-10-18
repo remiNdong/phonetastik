@@ -21,11 +21,6 @@ li {
 font-size: 1.5em;
 }
 
-.footerCss {
- background-color:black;
-	color :white;
-	text-align: center;
-}
 
 
 .nav.navbar-nav li a {
@@ -46,7 +41,12 @@ color:white;
 
 
 #numTel { 
-	margin-top : 25px;
+	margin-top : 30px;
+	}
+	
+	
+#numTelButton { 
+	font-size: 1em;
 	}
 
 
