@@ -2,19 +2,26 @@ package fr.phonetastik.controller;
 
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 @Controller
 public class AcceuilController {
 
 	// mapping pour methode Get
-	@GetMapping("/home")
+	@GetMapping(value={"/home","/"})
 	public String viewTemplate(Model model) {
 		// objet model permet d'inserer des attributs dans la vue et les recuperer
 		return "index";
 	}
+	
+
+
 
 	// mapping pour methode Get
 	@GetMapping("/acceuil")
@@ -22,5 +29,10 @@ public class AcceuilController {
 		// objet model permet d'inserer des attributs dans la vue et les recuperer
 		return "acceuil";
 	}
+	
+
+		
+	
+	
 
 }

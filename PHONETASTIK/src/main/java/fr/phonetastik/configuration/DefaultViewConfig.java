@@ -1,0 +1,21 @@
+package fr.phonetastik.configuration;
+
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/*
+ * Classe qui permet la redirection vers la page login avec un controller par defaut
+ */
+@Configuration
+public class DefaultViewConfig implements WebMvcConfigurer {
+	
+	@Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/login");
+        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+    }
+
+}
