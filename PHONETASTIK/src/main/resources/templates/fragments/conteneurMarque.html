@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<th:block th:insert="fragments/default.html :: headerfiles"></th:block>
+</head>
+
+<body>
+
+	<div class="conteneurMarque" th:fragment="conteneurMarque">
+	
+	  <h1 th:text="${marque.nom}"></h1>
+	   <img  alt="${marque.nom}" role="presentation" th:src="@{'/images/'+${marque.nom}+'.png'"/>
+
+
+	</div>
+
+
+
+
+	<div>
+		<th:block th:insert="fragments/default.html :: scripts">
+	</div>
+
+</body>
+
+</html>

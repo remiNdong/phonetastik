@@ -16,7 +16,6 @@ public class AcceuilController {
 	// mapping pour methode Get
 	@GetMapping(value={"/home","/"})
 	public String viewTemplate(Model model) {
-		// objet model permet d'inserer des attributs dans la vue et les recuperer
 		return "index";
 	}
 	
@@ -26,7 +25,6 @@ public class AcceuilController {
 	// mapping pour methode Get
 	@GetMapping("/acceuil")
 	public String viewTemplateAcceuil(Model model) {
-		// objet model permet d'inserer des attributs dans la vue et les recuperer
 		return "acceuil";
 	}
 	

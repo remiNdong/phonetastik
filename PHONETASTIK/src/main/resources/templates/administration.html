@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<th:block th:insert="fragments/default.html :: headerfiles"></th:block>
+</head>
+
+<body>
+
+	<nav>
+		<th:block th:insert="fragments/header.html :: header"></th:block>
+	</nav>
+
+
+	<div>
+		<th:block th:insert="fragments/deconnexion.html :: administration">
+	</div>
+
+
+
+		<div class="container">
+
+			<div class="jumbotron">
+				<h2>Gestion des Marques</h2>
+				<div class="row">
+					<div class="col-sm-6"><a th:href="@{'/administration/creationMarque'}"><button type="button" class="btn btn-primary">Créer une Marque</button></a></div>
+					<div class="col-sm-6"><button type="button" class="btn btn-primary">Modifier une Marque</button>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="jumbotron">
+				<h2>Gestion des Modèles de télèphone</h2>
+				<div class="row">
+					<div class="col-sm-6"><button type="button" class="btn btn-primary">Créer un modèle</button></div>
+					<div class="col-sm-6"><button type="button" class="btn btn-primary">Modifier une modèle</button>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div class="jumbotron">
+				<h2>Gestion des Réparation</h2>
+				<div class="row">
+					<div class="col-sm-6"><button type="button" class="btn btn-primary">Créer une Réparations</button>
+					</div>
+					<div class="col-sm-6"><button type="button" class="btn btn-primary">Modifier une Réparation</button>
+					</div>
+
+				</div>
+				
+			</div>
+				<div class="jumbotron">
+				<h2>Gestion des Accesoires</h2>
+				<div class="row">
+					<div class="col-sm-6"><button type="button" class="btn btn-primary">Créer un accessoires</button>
+					</div>
+					<div class="col-sm-6"><button type="button" class="btn btn-primary">Modifier un  accessoires</button>
+					</div>
+
+				</div>
+			</div>
+
+
+
+		</div>
+
+	
+
+
+
+
+
+
+
+	<nav>
+		<th:block th:insert="fragments/footer.html :: footer"></th:block>
+	</nav>
+
+
+	<div>
+		<th:block th:insert="fragments/default.html :: scripts">
+	</div>
+
+
+</body>
+
+</html>
