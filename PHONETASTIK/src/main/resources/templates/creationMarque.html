@@ -4,6 +4,92 @@
 <head>
 	<th:block th:insert="fragments/default.html :: headerfiles"></th:block>
 </head>
+<script type="text/javascript">
+	function verifForm() {
+		$("#erreurNom").text("");
+		$("#erreurImage").text("");
+
+
+
+		var resultat = true;
+		var nom = $("#nom").val();
+		var imageMarque = $("#imageMarque").val();
+		var numNom = nom.indexOf(" ");
+
+
+		if (numNom != -1 || nom == "") {
+			resultat = false;
+			$("#erreurNom").text("Verifier que votre nom de Marque est rempli et qu'il ne comporte pas d'espace ");
+		}
+
+
+		var lastPoint = imageMarque.lastIndexOf(".") + 1;
+		var extFile = imageMarque.substr(lastPoint, imageMarque.length).toLowerCase();
+		if (extFile == "jpg") {
+			//TO DO
+		} else {
+			resultat = false;
+			$("#erreurImage").text("Seuls les de type .jpg sont acceptés");
+		}
+
+
+
+		return resultat;
+	}
+
+
+	function verifForm2() {
+
+		var fichiers = document.querySelector("#imageMarque");
+		var curfiles = fichiers.files;
+
+
+		$("#erreurImage2").text("");
+
+		var resultat = true;
+		if (curfiles.length === 0) {
+			resultat = false;
+			$("#erreurImage2").text("Aucune image selectionnée");
+
+		} else {
+			var currentFile = curfiles[0];
+
+
+			if (!validFileType(currentFile)) {
+				resultat = false;
+				$("#erreurImage2").text("Attention Seuls les de type .jpg sont acceptés");
+
+			}
+			
+			
+		}
+
+
+
+		return resultat;
+	}
+
+
+	function verifFormTotal() {
+		var verif1=verifForm();
+		var verif2 = verifForm2();
+		
+		return verif1 && verif2;
+	}
+
+
+	function validFileType(file) {
+
+		var fileTypeAccepte = 'image/jpeg';
+		if (file.type === fileTypeAccepte) {
+			return true;
+		}
+		return false;
+	}
+
+
+
+</script>
 
 <body>
 
@@ -22,7 +108,7 @@
 
 
 		<form action="#" method="post" th:action="@{'/administration/creationMarque'}" th:object="${marque}"
-			onsubmit="return verifForm()">
+			onsubmit="return verifFormTotal()" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Nom de la Marque</label>
 				<input id="nom" type="text" th:field="*{nom}" th:errorclass="'is-invalid'" class="form-control" />
@@ -32,15 +118,18 @@
 
 			<div class="form-group">
 				<label>Image</label>
-				<input type="file" id="imageMarque" name="imageMarque" accept=".jpg">
+				<input type="file" id="imageMarque" name="imageMarque" accept=".jpg" />
 				<div class="text-danger" id="erreurImage"></div>
+				<div class="text-danger" id="erreurImage2"></div>
 			</div>
-
+			<div class="text-danger" id="erreur"><span th:text="${erreurCreationMarque}"
+					style="font-weight: bolder"></span></div>
+			</br></br>
 			<input id="submit" type="submit" class="btn btn-primary" />
 		</form>
 
 
-		<div id="erreur"><span th:text="${erreurVue}"></span></div>
+
 
 	</div>
 
@@ -59,40 +148,7 @@
 	</div>
 
 
-	<script type="text/javascript">
-		function verifForm() {
-			$("#erreurNom").text("");
-			$("#erreurImage").text("");
 
-
-			var resultat = true;
-			var nom = $("#nom").val();
-			var imageMarque = $("#imageMarque").val();
-			var numNom = nom.indexOf(" ");
-
-
-			if (numNom != -1 || nom == "") {
-				resultat = false;
-				$("#erreurNom").text("Verifier que votre nom de Marque est rempli et qu'il ne comporte pas d'espace ");
-			}
-
-
-			var lastPoint = imageMarque.lastIndexOf(".") + 1;
-			var extFile = imageMarque.substr(lastPoint, imageMarque.length).toLowerCase();
-			if (extFile == "jpg") {
-				//TO DO
-			} else {
-				resultat = false;
-				$("#erreurImage").text("Seuls les fichiers jpg , jpeg et png sont acceptés ");
-			}
-
-
-
-
-
-			return resultat;
-		}
-	</script>
 
 
 

@@ -44,8 +44,8 @@ public class AdministrationController {
 				return "listeMarques";
 
 			} else {
-				model.addAttribute("erreur", "Il ne peut y avoir qu'une marque pour ce nom");
-				return "redirect:/administration/creationMarque";
+				model.addAttribute("erreurCreationMarque", "Il ne peut y avoir qu'une marque de  nom "+marque.getNom());
+				return "creationMarque";
 			}
 
 		} catch (Exception e) {
