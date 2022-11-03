@@ -7,12 +7,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import fr.phonetastik.model.Marque;
+import fr.phonetastik.model.Nomdefichierimage;
 import fr.phonetastik.service.MarqueService;
+import fr.phonetastik.service.NomdefichierimageService;
+import fr.phonetastik.utils.StorageException;
+import fr.phonetastik.utils.StorageService;
 
 @Controller
 public class AdministrationController {
+
+	@Autowired
+	StorageService storageService;
+
+	@Autowired
+	NomdefichierimageService nomdefichierimageService;
 
 	@Autowired
 	MarqueService marqueService;
@@ -35,16 +47,29 @@ public class AdministrationController {
 	}
 
 	@PostMapping(value = "/administration/creationMarque")
-	public String viewTemplateCreationPost(@Valid Marque marque, Model model) {
+	public String viewTemplateCreationPost(@RequestParam("imageMarque") MultipartFile file, @Valid Marque marque,
+			Model model) {
 
 		try {
 
+			if (nomdefichierimageService.findNomDeFichierImageById(file.getOriginalFilename()) != null) {
+				throw new StorageException("Il y a deja une image de ce nom, changer le nom de l'image");
+			}
+
 			if (marqueService.findMarqueByNom(marque.getNom()).isEmpty()) {
+
+				storageService.store(file);
+
+				Nomdefichierimage nomdefichierimage = new Nomdefichierimage(file.getOriginalFilename());
+				nomdefichierimageService.enregistrer(nomdefichierimage);
+
+				marque.setFilename(file.getOriginalFilename());
 				marqueService.enregistrer(marque);
-				return "listeMarques";
+				return "redirect:/listeMarques";
 
 			} else {
-				model.addAttribute("erreurCreationMarque", "Il ne peut y avoir qu'une marque de  nom "+marque.getNom());
+				model.addAttribute("erreurCreationMarque",
+						"Il ne peut y avoir qu'une marque de  nom " + marque.getNom());
 				return "creationMarque";
 			}
 

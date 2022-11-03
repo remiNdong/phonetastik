@@ -10,7 +10,7 @@
 	<div class="conteneurMarque" th:fragment="conteneurMarque">
 	
 	  <h1 th:text="${marque.nom}"></h1>
-	   <img  alt="${marque.nom}" role="presentation" th:src="@{'/images/'+${marque.nom}+'.png'"/>
+	   <img  th:alt="${marque.nom}" role="presentation"  th:src="@{'/images/imagesDomaine/'+${marque.filename}}"/>
 
 
 	</div>

@@ -21,7 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.formLogin().loginPage("/login") // the custom login page
 				.defaultSuccessUrl("/home") // the landing page after a successful login
 				.and().logout().logoutSuccessUrl("/login").and().authorizeRequests()
-				.antMatchers("/webjars/**", "/", "/images/**", "/login", "/home", "/acceuil","/css/**")
+				.antMatchers("/webjars/**", "/", "/images/**", "/login", "/home", "/acceuil","/css/**","/listeMarques")
 	
 				.permitAll().anyRequest().authenticated();
 	}
