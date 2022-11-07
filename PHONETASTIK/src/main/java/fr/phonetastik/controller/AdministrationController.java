@@ -52,18 +52,24 @@ public class AdministrationController {
 
 		try {
 
+			/*
 			if (nomdefichierimageService.findNomDeFichierImageById(file.getOriginalFilename()) != null) {
 				throw new StorageException("Il y a deja une image de ce nom, changer le nom de l'image");
 			}
+			*/
 
+			if (nomdefichierimageService.findNomDeFichierImageById(marque.getNom()+".jpg") != null) {
+				throw new StorageException("Il y a deja une image de ce nom, changer le nom de l'image");
+			}
+			
 			if (marqueService.findMarqueByNom(marque.getNom()).isEmpty()) {
 
-				storageService.store(file);
+				storageService.store(file, marque.getNom()+".jpg");
 
-				Nomdefichierimage nomdefichierimage = new Nomdefichierimage(file.getOriginalFilename());
+				Nomdefichierimage nomdefichierimage = new Nomdefichierimage(marque.getNom()+".jpg");
 				nomdefichierimageService.enregistrer(nomdefichierimage);
 
-				marque.setFilename(file.getOriginalFilename());
+				marque.setFilename(marque.getNom()+".jpg");
 				marqueService.enregistrer(marque);
 				return "redirect:/listeMarques";
 
