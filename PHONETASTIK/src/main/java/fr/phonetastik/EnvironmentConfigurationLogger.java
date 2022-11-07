@@ -30,6 +30,7 @@ public class EnvironmentConfigurationLogger {
 				.forEach(prop -> LOGGER.info("{}", prop));// environment.getProperty(prop)
 		LOGGER.info("===========================================");
 		
+		
 	}
 
 }
