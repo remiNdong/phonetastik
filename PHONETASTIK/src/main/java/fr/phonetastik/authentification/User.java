@@ -35,6 +35,9 @@ public class User implements Serializable {
 		return email;
 	}
 
+	public String setEmail() {
+		return email;
+	}
 	
 
 	public String getPseudo() {
