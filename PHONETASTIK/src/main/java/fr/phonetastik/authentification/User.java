@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table //(name="user",schema = "ebdb")
+@Table(name="user",schema = "phonetastik")
 public class User implements Serializable {
 	
 	public User() {

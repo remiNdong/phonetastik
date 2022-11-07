@@ -8,9 +8,12 @@
 <body>
 
 	<div class="conteneurMarque" th:fragment="conteneurMarque">
-	
-	  <h1 th:text="${marque.nom}"></h1>
-	   <img  th:alt="${marque.nom}" role="presentation"  th:src="@{'/images/imagesDomaine/'+${marque.filename}}"/>
+
+
+			<h3 th:text="${marque.nom}"></h3>
+			<img th:alt="${marque.nom}" role="presentation" th:src="@{'/images/imagesDomaine/'+${marque.filename}}"
+				width="200" height="100" />
+
 
 
 	</div>

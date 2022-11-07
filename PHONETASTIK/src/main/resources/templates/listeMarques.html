@@ -19,13 +19,18 @@
 
 	<div class="container">
 
+		<div class="conteneurListe">
+		<h1>Choisissez votre marque</h1>
+			<div class="row">
 
 
-		<div th:each="marque: ${listeMarques}">
-			<div th:replace="fragments/conteneurMarque :: conteneurMarque"></div>
+				<div class="col-sm-3" th:each="marque: ${listeMarques}">
+					<div th:replace="fragments/conteneurMarque :: conteneurMarque"></div>
+				</div>
+			</div>
 		</div>
-		
-		
+
+
 
 	</div>
 

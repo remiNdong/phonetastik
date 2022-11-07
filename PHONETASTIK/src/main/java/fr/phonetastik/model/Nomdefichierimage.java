@@ -2,9 +2,11 @@ package fr.phonetastik.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="nomdefichierimage",schema = "phonetastik")
 public class Nomdefichierimage {
 
 	public Nomdefichierimage() {

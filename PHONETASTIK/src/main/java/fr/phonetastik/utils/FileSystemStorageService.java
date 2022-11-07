@@ -66,8 +66,8 @@ public class FileSystemStorageService implements StorageService {
 	public void enregistrer(MultipartFile multipartFile) {
 		try {
 			Files.copy(multipartFile.getInputStream(), this.root.resolve(multipartFile.getOriginalFilename()));
-			System.out.print("Rangement");
-			System.out.println(this.root.resolve(multipartFile.getOriginalFilename()).getRoot());
+			//System.out.print("Rangement");
+			//System.out.println(this.root.resolve(multipartFile.getOriginalFilename()).getRoot());
 			
 		} catch (Exception e) {
 			throw new RuntimeException("Could not store the file. Error: " + e.getMessage());

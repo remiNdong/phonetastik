@@ -16,8 +16,8 @@ align-items: center;
 }
 
 li {
-	margin-left : 20px;
-   margin-right: 20px;
+	margin-left : 10px;
+   margin-right: 10px;
 font-size: 1.5em;
 }
 
@@ -33,6 +33,12 @@ color:white;
 }
 
 #dropdownIcone li a {
+	background-color: white;
+	font-size: 0.75em;
+	color: black ;
+}
+
+#dropdownIconeBis li a {
 	background-color: white;
 	font-size: 0.75em;
 	color: black ;

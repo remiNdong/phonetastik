@@ -5,9 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="Marque",schema = "phonetastik")
 public class Marque {
 
 	public Marque() {
@@ -26,7 +28,7 @@ public class Marque {
 	@Column
 	private String visible;
 
-	@Column
+	@Column(name="fileName")
 	private String filename;
 
 	public Long getId() {

@@ -16,6 +16,12 @@ public class MainTest {
 
         String type=mimeType.substring(0,5);
              System.out.println(type);
+             
+             File dossier = new File("src/main/resources/static/images/imagesDomaine");
+             System.out.println("dossier existe ?");
+             System.out.println(dossier.exists());
+             System.out.println("est un dossier ?");
+             System.out.println(dossier.isDirectory());
         
     }
 
