@@ -28,7 +28,7 @@ public class Marque {
 	@Column
 	private String visible;
 
-	@Column(name="fileName")
+	@Column(name="filename")
 	private String filename;
 
 	public Long getId() {

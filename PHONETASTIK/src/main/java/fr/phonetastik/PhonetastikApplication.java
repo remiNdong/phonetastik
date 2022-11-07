@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import fr.phonetastik.utils.StorageService;
 
 @SpringBootApplication
-@ComponentScan("fr.phonetastik")
+@ComponentScan
 public class PhonetastikApplication extends SpringBootServletInitializer  {
 	
 	//implements CommandLineRunner
