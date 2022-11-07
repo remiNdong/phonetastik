@@ -4,11 +4,13 @@ import java.io.File;
 
 import javax.activation.MimetypesFileTypeMap;
 
+
 public class MainTest {
 	
 
     public static void main( String[] args ) {
 
+    	/*
         String chemin = "static/images/iphone13.jpg";
         File file = new File( chemin );
         String mimeType = new MimetypesFileTypeMap().getContentType( file );
@@ -22,6 +24,7 @@ public class MainTest {
              System.out.println(dossier.exists());
              System.out.println("est un dossier ?");
              System.out.println(dossier.isDirectory());
+             */
         
     }
 

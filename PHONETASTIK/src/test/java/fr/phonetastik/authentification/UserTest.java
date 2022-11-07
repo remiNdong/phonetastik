@@ -11,11 +11,13 @@ public class UserTest {
 	@Autowired
 	private UserService userService;
 	
+	/*
 	@Test
 	 public void testVisible() {
 		User userUnique=userService.findUserById("phonetastik@yahoo.com");
 		assertEquals("Rachid",userUnique.getPseudo());
 		assertFalse(userUnique.isAdmin());
 	}
+	*/
 
 }

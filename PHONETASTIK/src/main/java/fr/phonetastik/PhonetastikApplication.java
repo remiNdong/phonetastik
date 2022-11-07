@@ -1,24 +1,16 @@
 package fr.phonetastik;
 
-import javax.annotation.Resource;
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
-import fr.phonetastik.utils.StorageService;
-
 @SpringBootApplication
-@ComponentScan
-public class PhonetastikApplication extends SpringBootServletInitializer  {
-	
-	//implements CommandLineRunner
+@ComponentScan("fr.phonetastik")
+public class PhonetastikApplication extends SpringBootServletInitializer {
 
-	@Resource
-	StorageService storageService;
+	// implements CommandLineRunner
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -30,11 +22,8 @@ public class PhonetastikApplication extends SpringBootServletInitializer  {
 	}
 
 	/*
-	@Override
-	public void run(String... arg) throws Exception {
-		storageService.deleteAll();
-		storageService.init();
-	}
-	*/
+	 * @Override public void run(String... arg) throws Exception {
+	 * storageService.deleteAll(); storageService.init(); }
+	 */
 
 }
