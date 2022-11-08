@@ -11,7 +11,9 @@
 
 
 			<h3 th:text="${marque.nom}"></h3>
-			<img th:alt="${marque.nom}" role="presentation" th:src="@{'/images/imagesDomaine/'+${marque.filename}}"
+			<!--<img th:alt="${marque.nom}" role="presentation" th:src="@{'/images/imagesDomaine/'+${marque.filename}}"
+				width="200" height="100" />-->
+				<img th:alt="${marque.nom}" role="presentation" th:src="${map.get('marque.filename')}"
 				width="200" height="100" />
 
 

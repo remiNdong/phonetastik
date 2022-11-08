@@ -28,8 +28,8 @@ public class FileSystemStorageService implements StorageService {
 	private final Path root = Paths.get("src/main/resources/static/images/imagesDomaine");
 	private String dossierTemporaire = "src/main/resources/static/images/imagesDomaine";
 	private String bucketName = "phonetastikBucket";
-	private String accesskey = "";
-	private String secretkey = "";
+	private String accesskey = "AKIAUF7X3TSDMZ4OEKS";
+	private String secretkey = "yD9ReIgdxLsMw0V17q+xalVwkVss2vZdubWsTGaH";
 	private AmazonS3 s3client;
 	private  Map<String, File> map;
 
@@ -89,7 +89,7 @@ public class FileSystemStorageService implements StorageService {
 			File file = transfertTo(multipartFile);
 
 			s3client().putObject(bucketName, nomFichier, file);
-			map=getFiles();
+			map.put(nomFichier, file);
 
 			deleteAll();
 

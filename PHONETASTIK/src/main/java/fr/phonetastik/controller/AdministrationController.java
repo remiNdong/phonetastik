@@ -1,5 +1,8 @@
 package fr.phonetastik.controller;
 
+import java.io.File;
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +44,8 @@ public class AdministrationController {
 
 	@GetMapping(value = "listeMarques")
 	public String viewTemplateListeMarques(Model model) {
+		
+		model.addAttribute("map", storageService.getMap());
 
 		model.addAttribute("listeMarques", marqueService.lister());
 		return "listeMarques";
