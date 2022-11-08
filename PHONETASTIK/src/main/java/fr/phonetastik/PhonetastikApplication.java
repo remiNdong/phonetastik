@@ -12,7 +12,9 @@ import fr.phonetastik.utils.StorageService;
 
 @SpringBootApplication
 @ComponentScan("fr.phonetastik")
-public class PhonetastikApplication extends SpringBootServletInitializer implements CommandLineRunner {
+public class PhonetastikApplication extends SpringBootServletInitializer  {
+	
+	//implements CommandLineRunner
 	
 	@Autowired
 	StorageService storageService;
@@ -27,9 +29,12 @@ public class PhonetastikApplication extends SpringBootServletInitializer impleme
 		SpringApplication.run(PhonetastikApplication.class, args);
 	}
 
+	/*
 	@Override
 	public void run(String... arg) throws Exception {
+		storageService.deleteAll();
 		storageService.init();
 	}
+	*/
 
 }

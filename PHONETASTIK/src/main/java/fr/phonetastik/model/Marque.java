@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="Marque",schema = "phonetastik")
+@Table(name="marque",schema = "phonetastik")
 public class Marque {
 
 	public Marque() {

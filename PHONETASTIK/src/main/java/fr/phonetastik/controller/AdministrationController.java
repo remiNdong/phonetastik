@@ -45,7 +45,7 @@ public class AdministrationController {
 	@GetMapping(value = "listeMarques")
 	public String viewTemplateListeMarques(Model model) {
 		
-		model.addAttribute("map", storageService.getMap());
+		//model.addAttribute("map", storageService.getMap());
 
 		model.addAttribute("listeMarques", marqueService.lister());
 		return "listeMarques";

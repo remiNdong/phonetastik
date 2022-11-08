@@ -2,6 +2,7 @@ package fr.phonetastik.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -18,6 +19,7 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.ObjectListing;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
@@ -25,15 +27,11 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 @Service
 public class FileSystemStorageService implements StorageService {
 
-	private final Path root = Paths.get("src/main/resources/static/images/imagesDomaine");
-	private String dossierTemporaire = "src/main/resources/static/images/imagesDomaine";
-	private String bucketName = "phonetastikBucket";
-	private String accesskey = "AKIAUF7X3TSDMZ4OEKS";
-	private String secretkey = "yD9ReIgdxLsMw0V17q+xalVwkVss2vZdubWsTGaH";
+	private String bucketName = "phonetastikbucket";
+	private String accesskey = "AKIAUF7XY3TSOIDF5QNS";
+	private String secretkey = "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";
 	private AmazonS3 s3client;
-	private  Map<String, File> map;
-
-
+	//private Map<String, File> map;
 
 	public AmazonS3 s3client() {
 
@@ -46,17 +44,18 @@ public class FileSystemStorageService implements StorageService {
 
 	}
 
-	@Override
-	public void init() throws IOException {
+	/*
+	 * @Override public void init() throws IOException { toString();
+	 * 
+	 * map=getFiles();
+	 * 
+	 * }
+	 */
 
-		map=getFiles();
-
-	}
-
-	@Override
-	public void deleteAll() {
-		FileSystemUtils.deleteRecursively(root.toFile());
-	}
+	/*
+	 * public void deleteFile(File file ) throws IOException {
+	 * Files.delete(file.toPath()); }
+	 */
 
 	@Override
 	public void store(MultipartFile multipartFile, String nomFichier) {
@@ -85,26 +84,16 @@ public class FileSystemStorageService implements StorageService {
 		try {
 			// Files.copy(multipartFile.getInputStream(),
 			// this.root.resolve(multipartFile.getOriginalFilename()));
+			ObjectMetadata data = new ObjectMetadata();
+			data.setContentType(multipartFile.getContentType());
+			data.setContentLength(multipartFile.getSize());
 
-			File file = transfertTo(multipartFile);
-
-			s3client().putObject(bucketName, nomFichier, file);
-			map.put(nomFichier, file);
-
-			deleteAll();
+			s3client().putObject(bucketName, nomFichier, multipartFile.getInputStream(), data);
+			// map.put(nomFichier, file);
 
 		} catch (Exception e) {
 			throw new RuntimeException("Could not store the file. Error: " + e.getMessage());
 		}
-	}
-
-	public File transfertTo(MultipartFile multipartfile) throws IllegalStateException, IOException {
-
-		File file = new File(dossierTemporaire);
-
-		multipartfile.transferTo(file);
-
-		return file;
 	}
 
 	public boolean isImage(MultipartFile multipartFile) {
@@ -121,30 +110,30 @@ public class FileSystemStorageService implements StorageService {
 
 	}
 
-	public File getFile(String nomFile) throws IOException {
-		S3Object s3object = s3client().getObject(bucketName, nomFile);
-		S3ObjectInputStream inputStream = s3object.getObjectContent();
-		File file = new File(root + "nomFile");
-		FileUtils.copyInputStreamToFile(inputStream, file);
-		return file;
+	/*
+	 * public File getFile(String nomFile) throws IOException { S3Object s3object =
+	 * s3client().getObject(bucketName, nomFile); S3ObjectInputStream inputStream =
+	 * s3object.getObjectContent();
+	 * 
+	 * return file;
+	 * 
+	 * }
+	 */
 
-	}
-
-	public Map<String, File> getFiles() throws IOException {
-
-		Map<String, File> map = new HashMap<String, File>();
-
-		ObjectListing objectListing = s3client.listObjects(bucketName);
-		for (S3ObjectSummary os : objectListing.getObjectSummaries()) {
-			map.put(os.getKey(), getFile(os.getKey()));
-		}
-
-		return map;
-
-	}
-	
-	public Map<String, File> getMap(){
-		return map;
-	}
+	/*
+	 * public Map<String, File> getFiles() throws IOException {
+	 * 
+	 * Map<String, File> map = new HashMap<String, File>();
+	 * 
+	 * ObjectListing objectListing = s3client().listObjects(bucketName); for
+	 * (S3ObjectSummary os : objectListing.getObjectSummaries()) {
+	 * map.put(os.getKey(), getFile(os.getKey())); }
+	 * 
+	 * return map;
+	 * 
+	 * }
+	 * 
+	 * public Map<String, File> getMap(){ return map; }
+	 */
 
 }
