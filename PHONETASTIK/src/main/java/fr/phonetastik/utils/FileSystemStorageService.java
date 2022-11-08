@@ -28,8 +28,8 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 public class FileSystemStorageService implements StorageService {
 
 	private String bucketName = "phonetastikbucket";
-	private String accesskey = "AKIAUF7XY3TSOIDF5QNS";
-	private String secretkey = "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";
+	private String accesskey = "";
+	private String secretkey = "";
 	private AmazonS3 s3client;
 	//private Map<String, File> map;
 
