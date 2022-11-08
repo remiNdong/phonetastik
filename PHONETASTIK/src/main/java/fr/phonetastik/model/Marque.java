@@ -73,7 +73,7 @@ public class Marque {
 		}
 		Marque autre = (Marque) obj;
 
-		return this.getId() == autre.getId() || this.getNom().equals(autre.getNom());
+		return this.getId() == autre.getId();
 	}
 
 }

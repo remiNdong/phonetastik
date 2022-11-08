@@ -25,9 +25,11 @@
 
 
 				<div class="col-sm-3" th:each="marque: ${listeMarques}">
-					<div th:if="${marque.isVisible}">
+					<!--<div th:if="${marque.isVisible}">-->
+					<a th:href="@{'/administration/modificationMarque/'+${marque.id}}">
 						<div th:replace="fragments/conteneurMarque :: conteneurMarque"></div>
-					</div>
+					</a>
+					<!--</div>-->
 				</div>
 			</div>
 		</div>

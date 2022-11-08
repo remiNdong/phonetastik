@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import fr.phonetastik.dao.MarqueRepository;
 import fr.phonetastik.model.Marque;
 
@@ -29,17 +28,13 @@ public class MarqueServiceImpl implements MarqueService {
 		return (List<Marque>) marqueRepository.findAll();
 	}
 
-	@Transactional
-	@Override
-	public void supprimer(Long id) {
-		marqueRepository.deleteById(id);
-	}
-
+	@Transactional(readOnly = true)
 	@Override
 	public Marque findMarqueById(Long id) {
 		return marqueRepository.findById(id).orElse(null);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public List<Marque> findMarqueByNom(String nom) {
 		return marqueRepository.findByNom(nom);

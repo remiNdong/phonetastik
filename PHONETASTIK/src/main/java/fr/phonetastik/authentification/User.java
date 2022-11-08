@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import fr.phonetastik.model.Marque;
+
 
 
 @Entity
@@ -68,6 +70,20 @@ public class User implements Serializable {
 	public Boolean isAdmin() {
 		return Boolean.parseBoolean(admin.toLowerCase());
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof User)) {
+			return false;
+		}
+		User autre = (User) obj;
+
+		return this.getEmail().equals(autre.getEmail());
+	}
+	
 
 	public String toString() {
 

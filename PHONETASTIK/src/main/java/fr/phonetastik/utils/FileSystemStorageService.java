@@ -27,7 +27,7 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 @Service
 public class FileSystemStorageService implements StorageService {
 
-	private String bucketName = "phonetastikbucket";
+	private String bucketName = "";
 	private String accesskey = "";
 	private String secretkey = "";
 	private AmazonS3 s3client;
