@@ -8,7 +8,7 @@
 <body>
 
 	<nav>
-		<th:block th:insert="fragments/header.html :: header"></th:block>
+		<th:block th:insert="fragments/header2.html :: header"></th:block>
 	</nav>
 
 
@@ -17,7 +17,7 @@
 	</div>
 
 
-	<div class="container-fluid" id="containerAcceuil">
+	<div class="container" id="containerAcceuil">
 		<h1>Bienvenue chez Phonetastik</h1>
 		<p>Ouverts depuis mai 2022 , nous sommes spécialistes de la réparation de téléphones, tablettes, consoles de
 			jeux vidéos,
@@ -25,7 +25,7 @@
 		<p>N'hésitez pas à nous rendre visite si vous voulez donner une nouvelle vie à vos appareils électroniques</p>
 		<p>Vous pourrez également trouver tous les derniers téléphones et accessoires</p>
 		<p>Nous vous proposons de également de racheter vos anciens appareils.</p>
-		<img th:src="@{'/images/phonetastikPhoto.jpg'}" class="img-rounded" alt="Phonetastik">
+		<img   th:src="@{'/images/phonetastikPhoto.jpg'}" class=" img-responsive img-rounded" alt="Phonetastik"/>
 	</div>
 
 

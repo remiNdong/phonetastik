@@ -9,13 +9,13 @@
 
 	<div class="conteneurMarque" th:fragment="conteneurMarque">
 
-
-		<h3 th:text="${marque.nom}"></h3>
-		<!--<img th:alt="${marque.nom}" role="presentation" th:src="@{'/images/imagesDomaine/'+${marque.filename}}"
-				width="200" height="100" />-->
-		<img th:alt="${marque.nom}" role="presentation"
-			th:src="@{'https://phonetastikbucket.s3.eu-west-3.amazonaws.com/'+${marque.filename}}" width="240"
+			<h3 th:text="${marque.nom}"></h3>
+			<!--<img class="img-responsive" th:alt="${marque.nom}" role="presentation" th:src="@{'/images/imagesDomaine/apple.jpg'}" width="300"
+				height="100" />-->
+			<img class="img-responsive" th:alt="${marque.nom}" role="presentation"
+			th:src="@{'https://phonetastikbucket.s3.eu-west-3.amazonaws.com/'+${marque.filename}}" width="300"
 			height="100" />
+
 
 
 

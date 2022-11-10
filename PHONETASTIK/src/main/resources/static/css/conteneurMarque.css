@@ -9,6 +9,16 @@
 	 
 }
 
+.conteneurMarque h3{
+	text-align: center;
+	}
+	
+	.conteneurMarque img{
+	text-align: center;
+	}
+	
+	
+
 .conteneurListe {
 	text-align: center;
 	margin-top: 5px;

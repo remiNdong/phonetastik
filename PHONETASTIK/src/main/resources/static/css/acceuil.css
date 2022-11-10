@@ -14,6 +14,13 @@ font-weight: bold;
   text-align: center;
 }
 
+#containerAcceuil img {
+	margin :auto;
+}
+
+
+
+
 fieldset.scheduler-border#boxArticle {
 	
     border-top: solid 4px red !important;
