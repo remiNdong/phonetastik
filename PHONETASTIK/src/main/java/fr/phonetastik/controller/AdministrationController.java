@@ -75,8 +75,16 @@ public class AdministrationController {
 
 		// model.addAttribute("map", storageService.getMap());
 
-		model.addAttribute("listeMarques", marqueService.lister());
-		return "listeMarques";
+		try {
+
+			model.addAttribute("listeMarques", marqueService.lister());
+			return "listeMarques";
+
+		} catch (Exception e) {
+			model.addAttribute("erreurVue", e.toString());
+			return "erreurVue";
+		}
+
 	}
 
 	@PostMapping(value = "/administration/creationMarque")
