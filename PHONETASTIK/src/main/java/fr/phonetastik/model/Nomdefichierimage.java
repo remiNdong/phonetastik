@@ -37,5 +37,10 @@ public class Nomdefichierimage {
 
 		return this.getFilename().equals(autre.getFilename());
 	}
+	
+public int hashcode() {
+		
+		return this.getFilename().hashCode();
+	}
 
 }

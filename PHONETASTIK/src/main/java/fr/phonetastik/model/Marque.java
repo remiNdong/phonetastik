@@ -75,5 +75,10 @@ public class Marque {
 
 		return this.getId() == autre.getId();
 	}
+	
+	public int hashcode() {
+		
+		return this.getId().hashCode();
+	}
 
 }
