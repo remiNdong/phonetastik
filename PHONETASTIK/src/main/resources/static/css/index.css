@@ -29,7 +29,7 @@ legend.scheduler-border {
 	
 }
 
-#conteneurRuban1 , #conteneurHaut {
+#conteneurHaut {
 	
 	 background-color: black;
 	 text-align: center;
@@ -38,10 +38,13 @@ legend.scheduler-border {
 
 #conteneurRuban1{
 	
-	 display: flex;
-    justify-content: center;
-    align-items: center;
+	  display: flex;
+    justify-content: left;
+    background-color: pink;
 }
+
+
+
 
 
 
