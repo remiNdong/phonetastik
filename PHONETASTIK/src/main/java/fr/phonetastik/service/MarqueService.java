@@ -17,4 +17,6 @@ public interface MarqueService {
 	
 	List<Marque> lister();
 	
+	List<Marque> listerAvecModeles();
+	
 }

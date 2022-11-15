@@ -39,4 +39,11 @@ public class MarqueServiceImpl implements MarqueService {
 	public List<Marque> findMarqueByNom(String nom) {
 		return marqueRepository.findByNom(nom);
 	}
+	
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Marque> listerAvecModeles(){
+		return  marqueRepository.findAllModeles();
+	}
 }

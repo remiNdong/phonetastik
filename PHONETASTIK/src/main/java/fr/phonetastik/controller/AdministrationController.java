@@ -1,7 +1,6 @@
 package fr.phonetastik.controller;
 
-import java.io.File;
-import java.util.Map;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -40,34 +39,60 @@ public class AdministrationController {
 	}
 
 	@GetMapping(value = "/administration/creationMarque")
-	public String viewTemplateCreation(@Valid Marque marque) {
-		return "creationMarque";
+	public String viewTemplateCreation(@Valid Marque marque, Model model) {
+
+		try {
+
+			return "creationMarque";
+		} catch (Exception e) {
+			model.addAttribute("erreurVue", e.toString());
+			return "erreurVue";
+		}
 	}
 
 	@GetMapping(value = "/administration/modificationMarque")
-	public String viewTemplateModification() {
-		return "redirect:/listeMarques";
+	public String viewTemplateModification(Model model) {
+
+		try {
+
+			return "redirect:/listeMarques";
+		} catch (Exception e) {
+			model.addAttribute("erreurVue", e.toString());
+			return "erreurVue";
+		}
 	}
 
 	@GetMapping(value = "/administration/modificationMarque/{id}")
 	public String viewTemplateModificationNumero(Model model, @PathVariable long id) {
 
-		Marque marque = marqueService.findMarqueById(id);
-		model.addAttribute("marque", marque);
-		return "modificationMarque";
+		try {
+
+			Marque marque = marqueService.findMarqueById(id);
+			model.addAttribute("marque", marque);
+			return "modificationMarque";
+		} catch (Exception e) {
+			model.addAttribute("erreurVue", e.toString());
+			return "erreurVue";
+		}
 	}
 
 	@PostMapping(value = "/administration/modificationMarque/{id}")
 	public String viewTemplateModificationNumeroPost(Model model, @PathVariable long id, HttpServletRequest request) {
+		try {
 
-		Marque marque = marqueService.findMarqueById(id);
-		model.addAttribute("marque", marque);
+			Marque marque = marqueService.findMarqueById(id);
+			model.addAttribute("marque", marque);
 
-		String visible = request.getParameter("visible");
-		marque.setVisible(visible);
+			String visible = request.getParameter("visible");
+			marque.setVisible(visible);
 
-		marqueService.enregistrer(marque);
-		return "redirect:/listeMarques";
+			marqueService.enregistrer(marque);
+			return "redirect:/listeMarques";
+
+		} catch (Exception e) {
+			model.addAttribute("erreurVue", e.toString());
+			return "erreurVue";
+		}
 	}
 
 	@GetMapping(value = "listeMarques")
