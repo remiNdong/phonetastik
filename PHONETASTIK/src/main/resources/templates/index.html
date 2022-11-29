@@ -20,20 +20,19 @@
 
 
 
-		<div id="conteneurRuban1">
+		<div id="container conteneurRuban1" th:fragment="barreSousFooter">
 
 			<div class="row" id="conteneurRuban1_1">
 				<div class="col-sm-6"><img class="img-responsive" role="presentation"
-						th:src="@{'/images/rubanHaut2.PNG'}"  width="1500" height="800"/></div>
-				<div class="col-sm-6"><i class="fa fa-mobile" aria-hidden="true"></i></div>
+						th:src="@{'/images/rubanHaut2bis.PNG'}"  width="1800" height="800"/></div>
+				<div class="col-sm-6">	<a href="tel:+33767226264"><img class="img-responsive" role="presentation"
+						th:src="@{'/images/numeroTel.PNG'}"  width="1500" height="800"/></a></div>
 			</div>
 
 		</div>
 
 	</div>
-	</div>
 
-	</div>
 
 	<div>
 		<th:block th:insert="fragments/carouselBis.html :: carousel">
@@ -45,7 +44,7 @@
 
 
 	<fieldset class="scheduler-border container" id="boxAvis">
-		<legend class="scheduler-border">Donnez votre avis sur Google</legend>
+		<legend class="scheduler-border"><a href="https://g.page/r/CZxCL9DNHIyoEB0/review">Donnez votre avis sur Google</ahref></legend>
 		<th:block th:insert="fragments/carouselAvis.html :: carousel">
 
 	</fieldset>
