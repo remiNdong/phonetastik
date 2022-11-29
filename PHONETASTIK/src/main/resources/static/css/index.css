@@ -40,13 +40,15 @@ legend.scheduler-border {
 	
 	  display: flex;
     justify-content: left;
-    background-color: pink;
+    background-color: black;
 }
 
 
 
 
-
+#containerFooterIndex{
+	 background-color: black;
+}
 
 
 
@@ -57,4 +59,6 @@ legend.scheduler-border {
     align-items: center;
     margin-top : 20px ;
 }
+
+
 

@@ -14,19 +14,19 @@
 
 
 		<div>
-			<th:block th:insert="fragments/deconnexion.html :: administration">
+			<th:block th:insert="fragments/deconnexion.html :: administration"></th:block>
 		</div>
 
 
 
 
-		<div id="container conteneurRuban1" th:fragment="barreSousFooter">
+		<div id="conteneurRuban1" th:fragment="barreSousFooter">
 
 			<div class="row" id="conteneurRuban1_1">
 				<div class="col-sm-6"><img class="img-responsive" role="presentation"
-						th:src="@{'/images/rubanHaut2bis.PNG'}"  width="1800" height="800"/></div>
-				<div class="col-sm-6">	<a href="tel:+33767226264"><img class="img-responsive" role="presentation"
-						th:src="@{'/images/numeroTel.PNG'}"  width="1500" height="800"/></a></div>
+						th:src="@{'/images/rubanHaut2bis.PNG'}" width="1800" height="800" /></div>
+				<div class="col-sm-6"> <a href="tel:+33767226264"><img class="img-responsive" role="presentation"
+							th:src="@{'/images/numeroTel.PNG'}" width="1500" height="800" /></a></div>
 			</div>
 
 		</div>
@@ -35,17 +35,19 @@
 
 
 	<div>
-		<th:block th:insert="fragments/carouselBis.html :: carousel">
+		<th:block th:insert="fragments/carouselBis.html :: carousel"></th:block>
 	</div>
 
 	<div>
-		<th:block th:insert="fragments/descriptionMagasin.html :: descriptionMagasin">
+		<th:block th:insert="fragments/descriptionMagasin.html :: descriptionMagasin"></th:block>
 	</div>
 
 
 	<fieldset class="scheduler-border container" id="boxAvis">
-		<legend class="scheduler-border"><a href="https://g.page/r/CZxCL9DNHIyoEB0/review">Donnez votre avis sur Google</ahref></legend>
-		<th:block th:insert="fragments/carouselAvis.html :: carousel">
+		<legend class="scheduler-border"><a href="https://g.page/r/CZxCL9DNHIyoEB0/review">Donnez votre avis sur Google
+				</ahref>
+		</legend>
+		<th:block th:insert="fragments/carouselAvis.html :: carousel"></th:block>
 
 	</fieldset>
 
@@ -57,9 +59,14 @@
 	</div>
 
 
-	<nav>
-		<th:block th:insert="fragments/footer.html :: footer"></th:block>
-	</nav>
+
+		<nav>
+			<th:block th:insert="fragments/footer.html :: footerFantome"></th:block>
+		</nav>
+		
+		<nav>
+			<th:block th:insert="fragments/footer.html :: footer"></th:block>
+		</nav>
 
 
 	<div>
