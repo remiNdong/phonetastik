@@ -7,15 +7,15 @@
 
 <body>
 
-<div class="barreSousFooter">
-	<nav>
-		<th:block th:insert="fragments/header2.html :: header"></th:block>
-	</nav>
-
 	<div class="barreSousFooter">
-		<th:block th:insert="index.html :: barreSousFooter">
+		<nav>
+			<th:block th:insert="fragments/header2.html :: header"></th:block>
+		</nav>
+
+		<div class="barreSousFooter">
+			<th:block th:insert="index.html :: barreSousFooter">
+		</div>
 	</div>
-</div>
 
 	<div>
 		<th:block th:insert="fragments/deconnexion.html :: administration">
@@ -32,7 +32,13 @@
 		<p>Nous vous proposons de également de racheter vos anciens appareils.</p>
 		<img th:src="@{'/images/phonetastikPhoto.jpg'}" class=" img-responsive img-rounded" alt="Phonetastik" />
 	</div>
+	<div id="titreRealisations">
+	<h1>Nos réalisations</h1>
+	</divid>
 
+	<div id="containerCarousel">
+		<th:block th:insert="fragments/carouselReparations.html :: carousel"></th:block>
+	</div>
 
 	<fieldset class="scheduler-border" id="boxArticle">
 		<legend id="legendArticle" class="scheduler-border">Phonetastik à l'honneur</legend>

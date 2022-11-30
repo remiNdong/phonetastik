@@ -52,5 +52,20 @@ legend.scheduler-border#legendArticle {
 
 #boxArticle {
 	text-align: center;
+	margin-top : 30px;
+	margin-bottom : 30px;
 	
+}
+#titreRealisations{
+	text-align: center;
+	margin-top : 30px;
+}
+
+
+#titreRealisations h1{
+	font-weight: bold;
+}
+
+#containerCarousel{
+	margin-top : 30px;
 }
